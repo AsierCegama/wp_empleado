@@ -13,7 +13,7 @@ class DataBase {
         global $wpdb;
 
         $nomTabla = $wpdb->prefix .TABLA;
-        $sql = "insert into " . $nomTabla . " values ('" . $nombre . "','" . $apellido . "','" . $nss . "','" . $fijo . "','" . $ventas . "','" . $tarifa . "');";
+        $sql = "insert into " . $nomTabla . " values ('" . $nombre . "','" . $apellido . "','" . $nss . "'," . $fijo . "," . $ventas . "," . $tarifa . ");";
         $wpdb->query($sql);
     }
 

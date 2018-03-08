@@ -1,9 +1,18 @@
+<h1>Inicio insertar</h1>
 <?php
 
   require_once(plugin_dir_path(__FILE__) . '/../modelo/DataBase.php' );
-  
+  /*
   if(DataBase::comprobarEmpleado($_POST['nss'])){
       $error = "<div>El numero de segurodad social introducido ya existe en la base de datos</div>";
+  }*/
+  
+  if(isset($_POST['insertar'])){
+      if(DataBase::comprobarEmpleado($_POST['nss']) == false){
+      DataBase::agregarEmpleado();
+      }else{
+          echo "<div>El numero de segurodad social introducido ya existe en la base de datos</div>";
+      }
   }
   
 ?>  
@@ -31,4 +40,4 @@
             <input type="submit" value="insertar" name="insertar" />
     </form>
   
-  
+  <h1>Fin insertar</h1>
